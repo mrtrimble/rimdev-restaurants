@@ -5,7 +5,6 @@ import Map from '../components/Map.vue';
 const mapboxToken = import.meta.env.MAPBOX_TOKEN;
 const data = await Astro.glob('../pages/restaurants/harrisburg/*.md');
 const restaurants = data.map((r) => r.frontmatter);
-console.log(restaurants);
 
 const pho = restaurants.filter((r) => r.tags.includes('pho'));
 ---
@@ -55,7 +54,7 @@ const pho = restaurants.filter((r) => r.tags.includes('pho'));
         </div>
       </div>
     </section>
-    <section title="map">
+    <section>
       <header class="container">
         <h2>Restaurant Map</h2>
       </header>
