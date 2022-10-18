@@ -1,0 +1,92 @@
+@use "sass:meta";
+@import './mixins/';
+
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap");
+
+@layer reset, typography, components, theme;
+
+@layer reset {
+  @include meta.load-css("_reset.scss");
+}
+
+@layer components {
+  @include meta.load-css("components");
+}
+
+@layer typography {
+  @include meta.load-css("typography");
+}
+
+@layer theme {
+  :root{
+    --primary-color: #31225D;
+  }
+  body{
+    background: snow;
+  }
+  header {
+    @include stack;
+    margin-block-start: 1.5rem;
+    h1{
+      text-align: center;
+    }
+    svg{
+      margin-inline: auto;
+    }
+  }
+  main{
+    @include stack;
+    padding-block-end: 1.5rem;
+  }
+
+  section{
+    header {
+      margin-block:3rem;
+    }
+  }
+
+  #pho .container{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(30ch, 1fr));
+    > * {
+      margin: unset;
+    }
+  }
+
+  #pho {
+    --stack: 3rem;
+    @include stack;
+    .container > div{
+      padding-inline: 1rem;
+      @include stack;
+    }
+    figure{
+      width:100%;
+      img{
+        height: 100%;
+        width:100%;
+        object-fit: cover;
+      }
+    }
+    ul{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li{
+        --stack: 1rem;
+        @include stack;
+        width: 100%;
+        background: white;
+        padding: 1rem;
+      }
+    }
+
+    address{
+      width: 20ch;
+    }
+  }
+}

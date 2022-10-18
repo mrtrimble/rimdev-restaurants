@@ -1,0 +1,8 @@
+:root{
+  --stack: 1.5rem;
+}
+@mixin stack {
+  > * + * {
+    margin-block-start: var(--stack);
+  }
+}

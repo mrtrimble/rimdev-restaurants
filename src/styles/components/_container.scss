@@ -1,0 +1,8 @@
+@import '../mixins/';
+
+.container {
+  --container-width: 60ch;
+  width: min(var(--container-width), 100% - 3rem);
+  margin-inline: auto;
+  @include stack;
+}
