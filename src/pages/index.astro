@@ -4,11 +4,11 @@ import Map from '../components/Map.vue';
 
 const mapboxToken = import.meta.env.MAPBOX_TOKEN;
 
-const restaurantData = await Astro.glob('../pages/restaurants/harrisburg/*.md');
-const restaurants = restaurantData.map((r) => r.frontmatter);
+const restaurants = await Astro.glob('../pages/restaurants/harrisburg/*.md')
+  .then((res) => res.map((r) => r.frontmatter));
 
-const foodTrucksData = await Astro.glob('../pages/foodtrucks/*.md');
-const foodTrucks = foodTrucksData.map((r) => r.frontmatter);
+const foodTrucks = await Astro.glob('../pages/foodtrucks/*.md')
+  .then((res) => res.map((r) => r.frontmatter));
 
 const pho = restaurants.filter((r) => r.tags.includes('pho'));
 const donuts = restaurants.filter((r) => r.tags.includes('donuts')).reverse();
