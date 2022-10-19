@@ -98,6 +98,8 @@
       grid-template-columns: repeat(auto-fit, minmax(15ch, 1fr));
       gap: 1rem;
       li {
+        display:grid;
+        place-content: center;
         text-align: center;
         padding: 1rem;
         background: white;
