@@ -1,5 +1,5 @@
 @use "sass:meta";
-@import './mixins/';
+@import "./mixins/";
 
 @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap");
 
@@ -18,37 +18,36 @@
 }
 
 @layer theme {
-  :root{
-    --primary-color: #31225D;
+  :root {
+    --primary-color: #31225d;
   }
-  body{
+  body {
     background: snow;
   }
   header {
     @include stack;
     margin-block-start: 1.5rem;
-    h1{
+    h1 {
       text-align: center;
     }
-    svg{
+    svg {
       margin-inline: auto;
     }
   }
-  main{
+  main {
     @include stack;
     padding-block-end: 1.5rem;
   }
 
-  section{
+  section {
     header {
-      margin-block:3rem;
+      margin-block: 3rem;
     }
   }
 
-  #pho .container{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit, minmax(30ch, 1fr));
+  #pho .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
     > * {
       margin: unset;
     }
@@ -57,26 +56,26 @@
   #pho {
     --stack: 3rem;
     @include stack;
-    .container > div{
+    .container > div {
       padding-inline: 1rem;
       @include stack;
     }
-    figure{
-      width:100%;
-      img{
+    figure {
+      width: 100%;
+      img {
         height: 100%;
-        width:100%;
+        width: 100%;
         object-fit: cover;
       }
     }
-    ul{
-      display:flex;
+    ul {
+      display: flex;
       flex-wrap: wrap;
       gap: 1rem;
       margin: 0;
       padding: 0;
       list-style: none;
-      li{
+      li {
         --stack: 1rem;
         @include stack;
         width: 100%;
@@ -85,8 +84,24 @@
       }
     }
 
-    address{
+    address {
       width: 20ch;
+    }
+  }
+
+  #food-trucks {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(15ch, 1fr));
+      gap: 1rem;
+      li {
+        text-align: center;
+        padding: 1rem;
+        background: white;
+      }
     }
   }
 }

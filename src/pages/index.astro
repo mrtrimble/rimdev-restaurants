@@ -3,8 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import Map from '../components/Map.vue';
 
 const mapboxToken = import.meta.env.MAPBOX_TOKEN;
-const data = await Astro.glob('../pages/restaurants/harrisburg/*.md');
-const restaurants = data.map((r) => r.frontmatter);
+
+const restaurantData = await Astro.glob('../pages/restaurants/harrisburg/*.md');
+const restaurants = restaurantData.map((r) => r.frontmatter);
+
+const foodTrucksData = await Astro.glob('../pages/foodtrucks/*.md');
+const foodTrucks = foodTrucksData.map((r) => r.frontmatter);
 
 const pho = restaurants.filter((r) => r.tags.includes('pho'));
 ---
@@ -61,6 +65,18 @@ const pho = restaurants.filter((r) => r.tags.includes('pho'));
       <div class="container" style="--container-width: 80ch;">
         <Map mapboxToken={mapboxToken} locations={restaurants} client:idle />
       </div>
+    </section>
+    <section id="food-trucks" class="container">
+      <header>
+        <img
+          src="https://images.unsplash.com/photo-1570441262582-a2d4b9a916a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2648&q=80"
+          alt="food trucks"
+        />
+        <h2>Food Trucks</h2>
+      </header>
+      <ul>
+        {foodTrucks.map((foodTruck) => <li>{foodTruck.title}</li>)}
+      </ul>
     </section>
   </main>
 </Layout>
