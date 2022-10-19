@@ -8,9 +8,7 @@ const restaurantData = await Astro.glob('../pages/restaurants/harrisburg/*.md');
 const restaurants = restaurantData.map((r) => r.frontmatter);
 
 const foodTrucksData = await Astro.glob('../pages/foodtrucks/*.md');
-const foodTrucks = foodTrucksData
-  .map((r) => r.frontmatter)
-  
+const foodTrucks = foodTrucksData.map((r) => r.frontmatter);
 
 const pho = restaurants.filter((r) => r.tags.includes('pho'));
 const donuts = restaurants.filter((r) => r.tags.includes('donuts')).reverse();
@@ -61,25 +59,11 @@ const donuts = restaurants.filter((r) => r.tags.includes('donuts')).reverse();
         </div>
       </div>
     </section>
-    <section>
-      <header class="container">
-        <h2>Restaurant Map</h2>
-      </header>
-      <div class="container" style="--container-width: 80ch;">
-        <Map mapboxToken={mapboxToken} locations={restaurants} client:idle />
-      </div>
-    </section>
     <section id="pho">
       <header class="container">
         <h2>Our Favorite Phở</h2>
       </header>
       <div class="container">
-        <figure>
-          <img
-            src="https://images.unsplash.com/photo-1533787761082-492a5b83e614?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            alt="Pho"
-          />
-        </figure>
         <div>
           <ul>
             {
@@ -92,6 +76,12 @@ const donuts = restaurants.filter((r) => r.tags.includes('donuts')).reverse();
             }
           </ul>
         </div>
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1533787761082-492a5b83e614?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            alt="Pho"
+          />
+        </figure>
       </div>
     </section>
     <section id="food-trucks" class="container">
@@ -105,14 +95,22 @@ const donuts = restaurants.filter((r) => r.tags.includes('donuts')).reverse();
       <ul>
         {
           foodTrucks
-          .sort((a, b) => a.title.localeCompare(b.title))
-          .map((foodTruck) => (
-            <li>
-              <h3>{foodTruck.title}</h3>
-            </li>
-          ))
+            .sort((a, b) => a.title.localeCompare(b.title))
+            .map((foodTruck) => (
+              <li>
+                <h3>{foodTruck.title}</h3>
+              </li>
+            ))
         }
       </ul>
+    </section>
+    <section>
+      <header class="container">
+        <h2>Restaurant Map</h2>
+      </header>
+      <div class="container" style="--container-width: 80ch;">
+        <Map mapboxToken={mapboxToken} locations={restaurants} client:idle />
+      </div>
     </section>
   </main>
 </Layout>
