@@ -2,7 +2,10 @@
 import Layout from '../../layouts/Layout.astro';
 import StarRating from '../../components/StarRating.vue';
 
-const harrisburg = await Astro.glob('./harrisburg/*.md').then((data) =>
+const pennsylvania = await Astro.glob('./pennsylvania/*.md').then((data) =>
+  data.map((r) => r.frontmatter)
+);
+const idaho = await Astro.glob('./idaho/*.md').then((data) =>
   data.map((r) => r.frontmatter)
 );
 ---
@@ -26,7 +29,6 @@ const harrisburg = await Astro.glob('./harrisburg/*.md').then((data) =>
           fill="#31225D"></path>
       </svg>
     </header>
-
     <section>
       <div class="container">
         <header>
@@ -38,7 +40,7 @@ const harrisburg = await Astro.glob('./harrisburg/*.md').then((data) =>
         </header>
         <ul>
           {
-            harrisburg
+            pennsylvania
               .sort((a, b) => a.title.localeCompare(b.title))
               .sort((a, b) => b.rating - a.rating)
               .map((restaurant) => (
@@ -68,6 +70,27 @@ const harrisburg = await Astro.glob('./harrisburg/*.md').then((data) =>
             alt="Boise, Idaho"
           />
         </header>
+        <ul>
+          {
+            idaho
+              .sort((a, b) => a.title.localeCompare(b.title))
+              .sort((a, b) => b.rating - a.rating)
+              .map((restaurant) => (
+                <li>
+                  <h3>{restaurant.title}</h3>
+                  <StarRating rating={restaurant.rating} />
+                  <address>{restaurant.address}</address>
+                  <div class="tags">
+                    {restaurant.tags
+                      .sort((a, b) => a.localeCompare(b))
+                      .map((tag) => (
+                        <span class="tag">{tag}</span>
+                      ))}
+                  </div>
+                </li>
+              ))
+          }
+        </ul>
       </div>
     </section>
     <section>

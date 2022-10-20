@@ -5,12 +5,18 @@ import StarRating from '../components/StarRating.vue';
 
 const mapboxToken = import.meta.env.MAPBOX_TOKEN;
 
-const restaurants = await Astro.glob(
-  '../pages/restaurants/harrisburg/*.md'
+const pennsylvania = await Astro.glob(
+  '../pages/restaurants/pennsylvania/*.md'
 ).then((data) => data.map((r) => r.frontmatter));
 const foodTrucks = await Astro.glob('../pages/foodtrucks/*.md').then((data) =>
   data.map((r) => r.frontmatter)
 );
+
+const idaho = await Astro.glob('../pages/restaurants/idaho/*.md').then(
+  (data) => data.map((r) => r.frontmatter)
+);
+
+const restaurants = [...pennsylvania, ...idaho];
 
 const pho = restaurants
   .filter((r) => r.tags.includes('pho'))

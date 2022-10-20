@@ -5,7 +5,7 @@ lat: 40.2014466
 color: '#31225D'
 type: Brewery
 address: 26 W High St, Carlisle, PA 17013
-rating: 4
+rating: 3
 tags:
   - brewery
   - craft hard ciders

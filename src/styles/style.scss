@@ -1,20 +1,20 @@
-@use 'sass:meta';
-@import './mixins/';
+@use "sass:meta";
+@import "./mixins/";
 
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap");
 
 @layer reset, typography, components, theme;
 
 @layer reset {
-  @include meta.load-css('_reset.scss');
+  @include meta.load-css("_reset.scss");
 }
 
 @layer components {
-  @include meta.load-css('components');
+  @include meta.load-css("components");
 }
 
 @layer typography {
-  @include meta.load-css('typography');
+  @include meta.load-css("typography");
 }
 
 @layer theme {
@@ -94,14 +94,14 @@
     }
   }
 
-  .link-section{
-    display:grid;
+  .link-section {
+    display: grid;
     place-content: center;
     padding-block: 3rem;
     background: var(--primary-color);
-    h2{
-      padding:0;
-      margin:0;
+    h2 {
+      padding: 0;
+      margin: 0;
       color: white;
     }
   }
@@ -133,11 +133,11 @@
       margin: 0;
       padding: 0;
       list-style: none;
-      li{
+      li {
         @include stack;
         padding: 1rem;
         background: white;
-        address{
+        address {
           max-width: 15ch;
         }
       }
