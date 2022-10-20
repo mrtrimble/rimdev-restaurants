@@ -8,6 +8,9 @@ const pennsylvania = await Astro.glob('./pennsylvania/*.md').then((data) =>
 const idaho = await Astro.glob('./idaho/*.md').then((data) =>
   data.map((r) => r.frontmatter)
 );
+const honorableMentions = await Astro.glob('./honorable-mentions/*.md').then((data) =>
+  data.map((r) => r.frontmatter)
+);
 ---
 
 <Layout title="RIMdev's Favorite Restaurants">
@@ -102,6 +105,38 @@ const idaho = await Astro.glob('./idaho/*.md').then((data) =>
             alt="Albany, New York"
           />
         </header>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <header>
+          <h2>Honorable Mentions</h2>
+          <img
+            src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+            alt="Honorable Mention Restaurants"
+          />
+        </header>
+        <ul>
+          {
+            honorableMentions
+              .sort((a, b) => a.title.localeCompare(b.title))
+              .sort((a, b) => b.rating - a.rating)
+              .map((restaurant) => (
+                <li>
+                  <h3>{restaurant.title}</h3>
+                  <StarRating rating={restaurant.rating} />
+                  <address>{restaurant.address}</address>
+                  <div class="tags">
+                    {restaurant.tags
+                      .sort((a, b) => a.localeCompare(b))
+                      .map((tag) => (
+                        <span class="tag">{tag}</span>
+                      ))}
+                  </div>
+                </li>
+              ))
+          }
+        </ul>
       </div>
     </section>
   </main>

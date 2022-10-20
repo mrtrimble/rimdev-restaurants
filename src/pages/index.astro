@@ -15,8 +15,11 @@ const foodTrucks = await Astro.glob('../pages/foodtrucks/*.md').then((data) =>
 const idaho = await Astro.glob('../pages/restaurants/idaho/*.md').then(
   (data) => data.map((r) => r.frontmatter)
 );
+const honorableMentions = await Astro.glob('../pages/restaurants/honorable-mentions/*.md').then(
+  (data) => data.map((r) => r.frontmatter)
+);
 
-const restaurants = [...pennsylvania, ...idaho];
+const restaurants = [...pennsylvania, ...idaho, ...honorableMentions];
 
 const pho = restaurants
   .filter((r) => r.tags.includes('pho'))
