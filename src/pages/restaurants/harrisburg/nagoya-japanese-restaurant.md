@@ -5,6 +5,7 @@ lat: 40.2427375
 color: '#31225D'
 type: Japanese
 address: 829 State St, Lemoyne, PA 17043
+rating: 4
 tags: 
   - ramen
 ---

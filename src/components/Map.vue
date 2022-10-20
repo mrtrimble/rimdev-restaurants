@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import mapboxgl from 'mapbox-gl';
+import StarRating from '../components/StarRating.vue';
 
 const props = defineProps({
   mapboxToken: String,

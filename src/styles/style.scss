@@ -1,20 +1,20 @@
-@use "sass:meta";
-@import "./mixins/";
+@use 'sass:meta';
+@import './mixins/';
 
-@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap');
 
 @layer reset, typography, components, theme;
 
 @layer reset {
-  @include meta.load-css("_reset.scss");
+  @include meta.load-css('_reset.scss');
 }
 
 @layer components {
-  @include meta.load-css("components");
+  @include meta.load-css('components');
 }
 
 @layer typography {
-  @include meta.load-css("typography");
+  @include meta.load-css('typography');
 }
 
 @layer theme {
@@ -54,7 +54,8 @@
     }
   }
 
-  #pho, #donuts {
+  #pho,
+  #donuts {
     --stack: 3rem;
     @include stack;
     .container > div {
@@ -62,8 +63,10 @@
       @include stack;
     }
     figure {
-      height:350px;
+      height: 100%;
       width: 100%;
+      overflow: hidden;
+      aspect-ratio: 1;
       img {
         height: 100%;
         width: 100%;
@@ -91,6 +94,18 @@
     }
   }
 
+  .link-section{
+    display:grid;
+    place-content: center;
+    padding-block: 3rem;
+    background: var(--primary-color);
+    h2{
+      padding:0;
+      margin:0;
+      color: white;
+    }
+  }
+
   #food-trucks {
     ul {
       list-style: none;
@@ -100,12 +115,31 @@
       grid-template-columns: repeat(auto-fit, minmax(15ch, 1fr));
       gap: 1rem;
       li {
-        display:grid;
+        display: grid;
         place-content: center;
         text-align: center;
         aspect-ratio: 1;
         padding: 1rem;
         background: white;
+      }
+    }
+  }
+
+  #favorite-restaurants {
+    ul {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(15ch, 1fr));
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li{
+        @include stack;
+        padding: 1rem;
+        background: white;
+        address{
+          max-width: 15ch;
+        }
       }
     }
   }

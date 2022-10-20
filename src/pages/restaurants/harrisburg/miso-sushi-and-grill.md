@@ -5,6 +5,7 @@ lat: 40.302
 color: '#31225D'
 type: Japanese
 address: 4620 Jonestown Rd, Harrisburg, PA 17109
+rating: 4
 tags: 
   - sushi
   - miso soup
