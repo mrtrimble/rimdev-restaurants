@@ -9,5 +9,5 @@ rating: 4.5
 tags:
   - donuts
   - bakery
-  - coffee
+  - fritters
 ---
