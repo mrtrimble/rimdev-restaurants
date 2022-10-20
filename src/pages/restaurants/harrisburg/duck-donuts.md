@@ -8,4 +8,6 @@ address: 6230 Carlisle Pike, Hampden Township, PA 17050
 rating: 4
 tags:
   - donuts
+  - bakery
+  - coffee
 ---

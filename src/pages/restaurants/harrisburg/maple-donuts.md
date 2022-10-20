@@ -8,4 +8,6 @@ address: 3455 E Market St, York, PA 17402
 rating: 4.5
 tags:
   - donuts
+  - bakery
+  - coffee
 ---

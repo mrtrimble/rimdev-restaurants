@@ -7,7 +7,7 @@ type: Mexican
 address: 5470 Carlisle Pike, Mechanicsburg, PA 17050
 rating: 4
 tags: 
-  - tacos
-  - burritos
+  - mexican
+  - elote
   - fajitas
 ---

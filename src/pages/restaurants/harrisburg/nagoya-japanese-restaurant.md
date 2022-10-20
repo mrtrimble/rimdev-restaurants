@@ -7,5 +7,7 @@ type: Japanese
 address: 829 State St, Lemoyne, PA 17043
 rating: 4
 tags: 
+  - japanese
   - ramen
+  - gyoza
 ---

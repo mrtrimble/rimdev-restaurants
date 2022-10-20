@@ -2,14 +2,22 @@
 import Layout from '../../layouts/Layout.astro';
 import StarRating from '../../components/StarRating.vue';
 
-const harrisburg = await Astro.glob('./harrisburg/*.md').then((data) => data.map((r) => r.frontmatter));
+const harrisburg = await Astro.glob('./harrisburg/*.md').then((data) =>
+  data.map((r) => r.frontmatter)
+);
 ---
 
 <Layout title="RIMdev's Favorite Restaurants">
   <main id="favorite-restaurants">
     <header class="container">
       <h1 style="--container-width: 16ch;">Our Favorite Places!</h1>
-      <svg width="99" height="100" viewBox="0 0 99 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="99"
+        height="100"
+        viewBox="0 0 99 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <title>RIMdev Restaurants</title>
         <path
           fill-rule="evenodd"
@@ -23,7 +31,10 @@ const harrisburg = await Astro.glob('./harrisburg/*.md').then((data) => data.map
       <div class="container">
         <header>
           <h2>Pennsylvania</h2>
-          <img src="https://images.unsplash.com/photo-1576082176859-e557bdc7b1b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1458&q=80" alt="Pennsylvania State Capitol">
+          <img
+            src="https://images.unsplash.com/photo-1576082176859-e557bdc7b1b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1458&q=80"
+            alt="Pennsylvania State Capitol"
+          />
         </header>
         <ul>
           {
@@ -36,9 +47,11 @@ const harrisburg = await Astro.glob('./harrisburg/*.md').then((data) => data.map
                   <StarRating rating={restaurant.rating} />
                   <address>{restaurant.address}</address>
                   <div class="tags">
-                    {restaurant.tags.map((tag) => (
-                      <span class="tag">{tag}</span>
-                    ))}
+                    {restaurant.tags
+                      .sort((a, b) => a.localeCompare(b))
+                      .map((tag) => (
+                        <span class="tag">{tag}</span>
+                      ))}
                   </div>
                 </li>
               ))
@@ -50,7 +63,10 @@ const harrisburg = await Astro.glob('./harrisburg/*.md').then((data) => data.map
       <div class="container">
         <header>
           <h2>IDAHO</h2>
-          <img src="https://images.unsplash.com/photo-1465244554671-e501f19a3bb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Boise, Idaho">
+          <img
+            src="https://images.unsplash.com/photo-1465244554671-e501f19a3bb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+            alt="Boise, Idaho"
+          />
         </header>
       </div>
     </section>
@@ -58,7 +74,10 @@ const harrisburg = await Astro.glob('./harrisburg/*.md').then((data) => data.map
       <div class="container">
         <header>
           <h2>New York</h2>
-          <img src="https://images.unsplash.com/photo-1661446189055-b952388e1158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="Albany, New York">
+          <img
+            src="https://images.unsplash.com/photo-1661446189055-b952388e1158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
+            alt="Albany, New York"
+          />
         </header>
       </div>
     </section>
