@@ -5,13 +5,13 @@
 }
 
 .tag{
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--type-color);
   white-space: nowrap;
   display:grid;
   place-content: center;
   font-size: var(--step--2);
   padding-block: 0.1rem;
   padding-inline: 0.75rem;
-  color: var(--primary-color);
+  color: var(--type-color);
   border-radius: 3rem;
 }

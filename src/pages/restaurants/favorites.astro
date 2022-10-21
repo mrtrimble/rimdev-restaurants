@@ -1,29 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import StarRating from '../../components/StarRating.vue';
+import Card from '../../components/Card.vue';
 
-const pennsylvania = await Astro.glob('./pennsylvania/*.md').then((data) =>
-  data.map((r) => r.frontmatter)
-);
-const idaho = await Astro.glob('./idaho/*.md').then((data) =>
-  data.map((r) => r.frontmatter)
-);
-const honorableMentions = await Astro.glob('./honorable-mentions/*.md').then((data) =>
-  data.map((r) => r.frontmatter)
-);
+const pennsylvania = await Astro.glob('./pennsylvania/*.md').then((data) => data.map((r) => r.frontmatter));
+
+const idaho = await Astro.glob('./idaho/*.md').then((data) => data.map((r) => r.frontmatter));
+const honorableMentions = await Astro.glob('./honorable-mentions/*.md').then((data) => data.map((r) => r.frontmatter));
 ---
 
 <Layout title="RIMdev's Favorite Restaurants">
   <main id="favorite-restaurants">
     <header class="container">
       <h1 style="--container-width: 16ch;">Our Favorite Places!</h1>
-      <svg
-        width="99"
-        height="100"
-        viewBox="0 0 99 100"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="99" height="100" viewBox="0 0 99 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <title>RIMdev Restaurants</title>
         <path
           fill-rule="evenodd"
@@ -41,24 +31,19 @@ const honorableMentions = await Astro.glob('./honorable-mentions/*.md').then((da
             alt="Pennsylvania State Capitol"
           />
         </header>
-        <ul>
+        <ul class="cards">
           {
             pennsylvania
               .sort((a, b) => a.title.localeCompare(b.title))
               .sort((a, b) => b.rating - a.rating)
               .map((restaurant) => (
-                <li>
-                  <h3>{restaurant.title}</h3>
-                  <StarRating rating={restaurant.rating} />
-                  <address>{restaurant.address}</address>
-                  <div class="tags">
-                    {restaurant.tags
-                      .sort((a, b) => a.localeCompare(b))
-                      .map((tag) => (
-                        <span class="tag">{tag}</span>
-                      ))}
-                  </div>
-                </li>
+                <Card
+                  type={restaurant.type}
+                  title={restaurant.title}
+                  rating={restaurant.rating}
+                  address={restaurant.address}
+                  tags={restaurant.tags}
+                />
               ))
           }
         </ul>
@@ -73,24 +58,19 @@ const honorableMentions = await Astro.glob('./honorable-mentions/*.md').then((da
             alt="Boise, Idaho"
           />
         </header>
-        <ul>
+        <ul class="cards">
           {
             idaho
               .sort((a, b) => a.title.localeCompare(b.title))
               .sort((a, b) => b.rating - a.rating)
               .map((restaurant) => (
-                <li>
-                  <h3>{restaurant.title}</h3>
-                  <StarRating rating={restaurant.rating} />
-                  <address>{restaurant.address}</address>
-                  <div class="tags">
-                    {restaurant.tags
-                      .sort((a, b) => a.localeCompare(b))
-                      .map((tag) => (
-                        <span class="tag">{tag}</span>
-                      ))}
-                  </div>
-                </li>
+                <Card
+                  type={restaurant.type}
+                  title={restaurant.title}
+                  rating={restaurant.rating}
+                  address={restaurant.address}
+                  tags={restaurant.tags}
+                />
               ))
           }
         </ul>
@@ -116,24 +96,19 @@ const honorableMentions = await Astro.glob('./honorable-mentions/*.md').then((da
             alt="Honorable Mention Restaurants"
           />
         </header>
-        <ul>
+        <ul class="cards">
           {
             honorableMentions
               .sort((a, b) => a.title.localeCompare(b.title))
               .sort((a, b) => b.rating - a.rating)
               .map((restaurant) => (
-                <li>
-                  <h3>{restaurant.title}</h3>
-                  <StarRating rating={restaurant.rating} />
-                  <address>{restaurant.address}</address>
-                  <div class="tags">
-                    {restaurant.tags
-                      .sort((a, b) => a.localeCompare(b))
-                      .map((tag) => (
-                        <span class="tag">{tag}</span>
-                      ))}
-                  </div>
-                </li>
+                <Card
+                  type={restaurant.type}
+                  title={restaurant.title}
+                  rating={restaurant.rating}
+                  address={restaurant.address}
+                  tags={restaurant.tags}
+                />
               ))
           }
         </ul>

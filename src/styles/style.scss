@@ -20,6 +20,12 @@
 @layer theme {
   :root {
     --primary-color: #31225d;
+    --white: #FFFFFF;
+
+    --breakfast: #0056A3;
+    --brewery: #7D1814;
+    --noodles: #9C3883;
+    --pizza: #DB5175;
   }
   body {
     background: #f9f6ff;
@@ -133,14 +139,14 @@
       margin: 0;
       padding: 0;
       list-style: none;
-      li {
-        @include stack;
-        padding: 1rem;
-        background: white;
-        address {
-          max-width: 15ch;
-        }
-      }
+      // li {
+      //   @include stack;
+      //   padding: 1rem;
+      //   background: white;
+      //   address {
+      //     max-width: 15ch;
+      //   }
+      // }
     }
   }
 }

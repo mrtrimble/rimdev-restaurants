@@ -2,8 +2,8 @@
 title: Hallamshire Family Restaurant
 lng: -76.6159459
 lat: 40.0017827
-color: '#31225D'
-type: Family Restaurant
+color: 'var(--breakfast'
+type: breakfast
 address: 480 W Market St, Hallam, PA 17406
 rating: 4
 tags:
