@@ -5,7 +5,7 @@ lat: 37.8769705
 color: '#31225D'
 type: Brewery
 address: 462 Winery Ln, Roseland, VA 22967
-rating: 4
+rating: 3.5
 tags:
   - brewery
   - pub
