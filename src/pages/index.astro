@@ -34,7 +34,7 @@ const donuts = restaurants
   .slice(0, 2);
 
 const brewery = restaurants
-  .filter((r) => r.tags.includes('brewery'))
+  .filter((r) => r.type.includes('Brewery'))
   .sort((a, b) => a.title.localeCompare(b.title))
   .sort((a, b) => b.rating - a.rating)
   .slice(0, 2);
