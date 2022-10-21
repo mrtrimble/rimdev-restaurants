@@ -8,6 +8,6 @@ address: 26 W High St, Carlisle, PA 17013
 rating: 3
 tags:
   - brewery
-  - craft hard ciders
+  - craft ciders
   - appetizers
 ---
