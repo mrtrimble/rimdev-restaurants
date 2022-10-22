@@ -4,7 +4,11 @@ header[role='banner'] {
   @include stack;
   margin-block-start: 1.5rem;
   h1 {
+    font-size: var(--step-6);
     text-align: center;
+    @media (min-width: 640px){
+      font-size: var(--step-8);
+    }
   }
   svg {
     margin-inline: auto;
