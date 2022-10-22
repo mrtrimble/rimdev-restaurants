@@ -13,18 +13,18 @@ const honorableMentions = await Astro.glob('./honorable-mentions/*.md').then((da
 <Layout title="RIMdev's Favorite Restaurants">
   <Header header="Our Favorite Places" />
   <main id="favorite-restaurants">
-    <section>
+    <section id="pennsylvania">
+      <header class="container">
+        <h2>Pennsylvania</h2>
+        <Image
+          src="https://images.unsplash.com/photo-1576082176859-e557bdc7b1b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1458&q=80"
+          width="1072"
+          height="733"
+          alt="Sign saying The Pennsylvania State Capitol in front of the capitol building"
+          format="webp"
+        />
+      </header>
       <div class="container">
-        <header>
-          <h2>Pennsylvania</h2>
-          <Image
-            src="https://images.unsplash.com/photo-1576082176859-e557bdc7b1b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1458&q=80"
-            width="1072"
-            height="733"
-            alt="Sign saying The Pennsylvania State Capitol in front of the capitol building"
-            format="webp"
-          />
-        </header>
         <ul class="cards">
           {
             pennsylvania
@@ -43,18 +43,18 @@ const honorableMentions = await Astro.glob('./honorable-mentions/*.md').then((da
         </ul>
       </div>
     </section>
-    <section>
+    <section id="idaho">
+      <header class="container">
+        <h2>IDAHO</h2>
+        <Image
+          src="https://images.unsplash.com/photo-1465244554671-e501f19a3bb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+          width="1072"
+          height="733"
+          alt="Skyline view of Boise, Idaho"
+          format="webp"
+        />
+      </header>
       <div class="container">
-        <header>
-          <h2>IDAHO</h2>
-          <Image
-            src="https://images.unsplash.com/photo-1465244554671-e501f19a3bb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-            width="1072"
-            height="733"
-            alt="Skyline view of Boise, Idaho"
-            format="webp"
-          />
-        </header>
         <ul class="cards">
           {
             idaho
@@ -73,32 +73,31 @@ const honorableMentions = await Astro.glob('./honorable-mentions/*.md').then((da
         </ul>
       </div>
     </section>
-    <section>
-      <div class="container">
-        <header>
-          <h2>New York</h2>
-          <Image
-            src="https://images.unsplash.com/photo-1661446189055-b952388e1158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-            width="1072"
-            height="733"
-            alt="Skyline view of Albany, New York"
-            format="webp"
-          />
-        </header>
-      </div>
+    <section id="new-york">
+      <header class="container">
+        <h2>New York</h2>
+        <Image
+          src="https://images.unsplash.com/photo-1661446189055-b952388e1158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
+          width="1072"
+          height="733"
+          alt="Skyline view of Albany, New York"
+          format="webp"
+        />
+      </header>
+      <div class="container"></div>
     </section>
-    <section>
+    <section id="honorable-mentions">
+      <header class="container">
+        <h2>Honorable Mentions</h2>
+        <Image
+          src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+          width="1072"
+          height="733"
+          alt="Table at a restaurant with menus and drinks on it"
+          format="webp"
+        />
+      </header>
       <div class="container">
-        <header>
-          <h2>Honorable Mentions</h2>
-          <Image
-            src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-            width="1072"
-            height="733"
-            alt="Table at a restaurant with menus and drinks on it"
-            format="webp"
-          />
-        </header>
         <ul class="cards">
           {
             honorableMentions

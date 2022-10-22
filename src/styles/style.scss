@@ -62,7 +62,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
       place-content: center;
-      gap:1rem;
+      gap: 1rem;
     }
     figure {
       position: relative;
@@ -97,24 +97,12 @@
   }
 
   #favorite-restaurants {
-    @include stack;
-    section header {
-      @include stack;
-    }
-    section .container {
+    section{
       @include stack;
     }
     img {
       width: 100%;
       height: auto;
-    }
-    ul {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(15ch, 1fr));
-      margin: 0;
-      padding: 0;
-      list-style: none;
     }
   }
 }
