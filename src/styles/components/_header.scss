@@ -1,0 +1,12 @@
+@import '../mixins/';
+
+header[role='banner'] {
+  @include stack;
+  margin-block-start: 1.5rem;
+  h1 {
+    text-align: center;
+  }
+  svg {
+    margin-inline: auto;
+  }
+}

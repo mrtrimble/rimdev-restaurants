@@ -1,0 +1,12 @@
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  &:before,
+  &:after {
+    content: '';
+    flex: 1;
+    height: 6px;
+    background: var(--primary-color);
+  }
+}
