@@ -5,6 +5,9 @@ import vue from '@astrojs/vue';
 import image from "@astrojs/image";
 
 // https://astro.build/config
+import compress from "astro-compress";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [vue(), image()]
+  integrations: [vue(), image(), compress()]
 });
