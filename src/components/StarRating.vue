@@ -19,7 +19,7 @@ const props = defineProps({
       </mask>
     </defs>
     <g mask="url(#star-mask)">
-      <rect id="bar"
+      <rect class="bar"
             width="500"
             height="100"
             fill="#FF9E2C" />
@@ -38,8 +38,8 @@ svg {
   height: var(--step-0);
 }
 
-#bar {
+.bar {
   transform: scaleX(var(--star-percent));
-  
+
 }
 </style>

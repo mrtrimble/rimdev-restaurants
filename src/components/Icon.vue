@@ -18,6 +18,7 @@ const iconDefinitions = {
        viewbox="0 0 48 48"
        height="48"
        width="48">
+    <title>{{props.type}}</title>
     <path :d="iconDefinitions[props.type]" />
   </svg>
 </template>
