@@ -5,9 +5,7 @@
 
 @layer reset, typography, components, theme;
 
-@layer reset {
-  @include meta.load-css('_reset.scss');
-}
+@import '@acab/reset.css' layer(reset);
 
 @layer components {
   @include meta.load-css('components');
