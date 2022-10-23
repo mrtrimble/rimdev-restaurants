@@ -25,7 +25,7 @@ onMounted(() => {
   })
     .setHTML(`
         <div style="padding: 0.5rem">
-          <strong class="marker-name">Ritter Insurance Marketing</strong>
+          <strong style="color:#0C3F70;">Ritter Insurance Marketing</strong>
         </div>
       `)
 
@@ -46,7 +46,6 @@ onMounted(() => {
             <strong style="color: ${marker.color};">${marker.title}</strong> 
           </div>
           ${marker.address ? `<address style="margin-top: 0.25rem; width: 20ch;">${marker.address}</address>` : ''}
-          ${marker.type ? `<div style="margin-top: 0.25rem">${marker.type}</div>` : ''}
         </div>
       `)
 
