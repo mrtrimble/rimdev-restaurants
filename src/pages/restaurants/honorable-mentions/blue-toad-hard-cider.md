@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Blue Toad Hard Cider
 lng: -78.9252662
 lat: 37.8769705

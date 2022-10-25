@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Miso Sushi & Grill
 lng: -76.814
 lat: 40.302

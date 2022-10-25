@@ -1,13 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
-import Card from '../../components/Card.vue';
+import ListCard from '../../components/ListCard.vue';
 import { Image } from '@astrojs/image/components';
 
-const pennsylvania = await Astro.glob('./pennsylvania/*.md').then((data) => data.map((r) => r.frontmatter));
-
-const idaho = await Astro.glob('./idaho/*.md').then((data) => data.map((r) => r.frontmatter));
-const honorableMentions = await Astro.glob('./honorable-mentions/*.md').then((data) => data.map((r) => r.frontmatter));
+const pennsylvania = await Astro.glob('./pennsylvania/*.md');
+const idaho = await Astro.glob('./idaho/*.md');
+const honorableMentions = await Astro.glob('./honorable-mentions/*.md');
 ---
 
 <Layout title="RIMdev's Favorite Restaurants">
@@ -28,15 +27,18 @@ const honorableMentions = await Astro.glob('./honorable-mentions/*.md').then((da
         <ul class="cards">
           {
             pennsylvania
-              .sort((a, b) => a.title.localeCompare(b.title))
-              .sort((a, b) => b.rating - a.rating)
+              .sort((a, b) =>
+                a.frontmatter.title.localeCompare(b.frontmatter.title)
+              )
+              .sort((a, b) => b.frontmatter.rating - a.frontmatter.rating)
               .map((restaurant) => (
-                <Card
-                  type={restaurant.type}
-                  title={restaurant.title}
-                  rating={restaurant.rating}
-                  address={restaurant.address}
-                  tags={restaurant.tags}
+                <ListCard
+                  address={restaurant.frontmatter.address}
+                  link={restaurant.url}
+                  rating={restaurant.frontmatter.rating}
+                  title={restaurant.frontmatter.title}
+                  tags={restaurant.frontmatter.tags}
+                  type={restaurant.frontmatter.type}
                 />
               ))
           }
@@ -58,15 +60,18 @@ const honorableMentions = await Astro.glob('./honorable-mentions/*.md').then((da
         <ul class="cards">
           {
             idaho
-              .sort((a, b) => a.title.localeCompare(b.title))
-              .sort((a, b) => b.rating - a.rating)
+              .sort((a, b) =>
+                a.frontmatter.title.localeCompare(b.frontmatter.title)
+              )
+              .sort((a, b) => b.frontmatter.rating - a.frontmatter.rating)
               .map((restaurant) => (
-                <Card
-                  type={restaurant.type}
-                  title={restaurant.title}
-                  rating={restaurant.rating}
-                  address={restaurant.address}
-                  tags={restaurant.tags}
+                <ListCard
+                  link={restaurant.url}
+                  type={restaurant.frontmatter.type}
+                  title={restaurant.frontmatter.title}
+                  rating={restaurant.frontmatter.rating}
+                  address={restaurant.frontmatter.address}
+                  tags={restaurant.frontmatter.tags}
                 />
               ))
           }
@@ -101,15 +106,18 @@ const honorableMentions = await Astro.glob('./honorable-mentions/*.md').then((da
         <ul class="cards">
           {
             honorableMentions
-              .sort((a, b) => a.title.localeCompare(b.title))
-              .sort((a, b) => b.rating - a.rating)
+              .sort((a, b) =>
+                a.frontmatter.title.localeCompare(b.frontmatter.title)
+              )
+              .sort((a, b) => b.frontmatter.rating - a.frontmatter.rating)
               .map((restaurant) => (
-                <Card
-                  type={restaurant.type}
-                  title={restaurant.title}
-                  rating={restaurant.rating}
-                  address={restaurant.address}
-                  tags={restaurant.tags}
+                <ListCard
+                  link={restaurant.url}
+                  type={restaurant.frontmatter.type}
+                  title={restaurant.frontmatter.title}
+                  rating={restaurant.frontmatter.rating}
+                  address={restaurant.frontmatter.address}
+                  tags={restaurant.frontmatter.tags}
                 />
               ))
           }

@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: South County Brewery
 lng: -76.6980667
 lat: 39.9087371

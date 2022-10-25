@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: The First Post
 lng: -76.6488232
 lat: 39.9839692

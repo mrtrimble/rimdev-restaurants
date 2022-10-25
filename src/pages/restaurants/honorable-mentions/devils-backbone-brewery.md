@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Devil's Backbone
 lng: -78.9186439
 lat: 37.8712507

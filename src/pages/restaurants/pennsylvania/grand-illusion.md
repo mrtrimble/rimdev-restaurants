@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Grand Illusion Hard Cider
 lng: -77.1906461
 lat: 40.2014466

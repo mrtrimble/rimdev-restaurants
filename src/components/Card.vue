@@ -4,10 +4,6 @@ import Icon from '../components/Icon.vue';
 import { computed } from 'vue';
 
 const props = defineProps({
-  title: String,
-  address: String,
-  rating: Number,
-  tags: Array,
   type: String
 })
 
@@ -18,25 +14,16 @@ const typeClass = computed(() => {
 </script>
 
 <template>
-  <li class="card"
+  <div class="card"
       :class="typeClass">
     <div class="card-head">
       <span class="icon">
         <Icon :type="props.type" />
       </span>
     </div>
-    <h3>{{props.title}}</h3>
-    <StarRating v-if="props.rating"
-                :rating="props.rating" />
-    <address v-if="props.address">{{props.address}}</address>
-    <div v-if="props.tags"
-         class="tags">
-      <span class="tag"
-            v-for="tag in props.tags"
-            :key="tag">
-        {{tag}}
-      </span>
-    </div>
-  </li>
+    
+      <slot></slot>
+    
+  </div>
 </template>
 

@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Duck Donuts
 lng: -76.9971751
 lat: 40.2446163

@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: BrewDog Reykjavik
 lng: -21.9246724
 lat: 64.1454869

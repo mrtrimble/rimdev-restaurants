@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Round the Clock Diner
 lng: -76.7273816
 lat: 39.984373

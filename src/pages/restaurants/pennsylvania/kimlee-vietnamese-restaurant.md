@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Kimlee Vietnamese Restaurant
 lng: -76.832
 lat: 40.335

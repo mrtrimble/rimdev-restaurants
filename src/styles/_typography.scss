@@ -1,3 +1,5 @@
+@import '../styles/mixins/';
+
 :root {
   --step--2: clamp(0.91rem, calc(0.89rem + 0.1vw), 0.96rem);
   --step--1: clamp(1.09rem, calc(1.05rem + 0.21vw), 1.2rem);
@@ -42,12 +44,18 @@ h3 {
   line-height: 1;
 }
 
-header[role='banner'] {
-  h1 {
-    
-  }
-}
-
 address {
   font-style: normal;
+}
+
+dl {
+  @include stack;
+  dt{
+    text-transform: uppercase;
+    font-size: var(--step--2);
+    font-weight: 700;
+  }
+  dd{
+    margin-block-start: 0.5rem;
+  }
 }

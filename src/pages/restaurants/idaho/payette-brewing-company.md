@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Payette Brewing Company
 lng: -116.2152023
 lat: 43.6135635

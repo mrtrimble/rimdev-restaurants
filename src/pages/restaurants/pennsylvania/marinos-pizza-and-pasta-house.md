@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Marino's Pizza & Pasta House
 lng: -76.653822
 lat: 39.981945

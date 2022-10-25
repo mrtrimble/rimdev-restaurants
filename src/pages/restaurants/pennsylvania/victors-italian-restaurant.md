@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Victor's Italian Restaurant
 lng: -76.6978916
 lat: 39.9605297

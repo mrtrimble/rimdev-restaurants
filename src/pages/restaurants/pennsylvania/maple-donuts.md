@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Maple Donuts
 lng: -76.6561157
 lat: 39.9815418

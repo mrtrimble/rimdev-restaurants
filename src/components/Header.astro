@@ -1,9 +1,9 @@
 ---
-const { header } = Astro.props;
+const { header, width } = Astro.props;
 ---
 
-<header class="container" role="banner">
-  <h1 style="--container-width: 20ch;">{header}</h1>
+<header class="container" role="banner" style={width ? width : '--container-width: 60ch;'}>
+  <h1>{header}</h1>
   <div class="divider">
     <a href="/">
       <svg width="99" height="100" viewBox="0 0 99 100" fill="none" xmlns="http://www.w3.org/2000/svg">

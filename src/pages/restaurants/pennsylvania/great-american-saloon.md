@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Great American Saloon
 lng: -76.623477
 lat: 39.894906

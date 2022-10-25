@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Iron Hill Brewery & Restaurant
 lng: -76.318818
 lat: 40.05066

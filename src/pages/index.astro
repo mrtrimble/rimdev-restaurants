@@ -2,35 +2,37 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Map from '../components/Map.vue';
-import Card from '../components/Card.vue';
+import ListCard from '../components/ListCard.vue';
 import { Image } from '@astrojs/image/components';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const mapboxToken = import.meta.env.MAPBOX_TOKEN;
 
-const pennsylvania = await Astro.glob('../pages/restaurants/pennsylvania/*.md').then((data) => data.map((r) => r.frontmatter));
+const pennsylvania = await Astro.glob('../pages/restaurants/pennsylvania/*.md');
 
-const idaho = await Astro.glob('../pages/restaurants/idaho/*.md').then((data) => data.map((r) => r.frontmatter));
-const honorableMentions = await Astro.glob('../pages/restaurants/honorable-mentions/*.md').then((data) => data.map((r) => r.frontmatter));
+const idaho = await Astro.glob('../pages/restaurants/idaho/*.md');
+const honorableMentions = await Astro.glob(
+  '../pages/restaurants/honorable-mentions/*.md'
+);
 
 const restaurants = [...pennsylvania, ...idaho, ...honorableMentions];
 
 const pho = restaurants
-  .filter((r) => r.tags.includes('pho'))
-  .sort((a, b) => a.title.localeCompare(b.title))
-  .sort((a, b) => b.rating - a.rating)
+  .filter((r) => r.frontmatter.tags.includes('pho'))
+  .sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title))
+  .sort((a, b) => b.frontmatter.rating - a.frontmatter.rating)
   .slice(0, 2);
 
 const donuts = restaurants
-  .filter((r) => r.tags.includes('donuts'))
-  .sort((a, b) => a.title.localeCompare(b.title))
-  .sort((a, b) => b.rating - a.rating)
+  .filter((r) => r.frontmatter.tags.includes('donuts'))
+  .sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title))
+  .sort((a, b) => b.frontmatter.rating - a.frontmatter.rating)
   .slice(0, 2);
 
 const brewery = restaurants
-  .filter((r) => r.type.includes('brewery'))
-  .sort((a, b) => a.title.localeCompare(b.title))
-  .sort((a, b) => b.rating - a.rating)
+  .filter((r) => r.frontmatter.type.includes('brewery'))
+  .sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title))
+  .sort((a, b) => b.frontmatter.rating - a.frontmatter.rating)
   .slice(0, 2);
 ---
 
@@ -54,7 +56,13 @@ const brewery = restaurants
         <ul class="cards">
           {
             donuts.map((restaurant) => (
-              <Card title={restaurant.title} rating={restaurant.rating} type={restaurant.type} address={restaurant.address} />
+              <ListCard
+                link={restaurant.url}
+                title={restaurant.frontmatter.title}
+                rating={restaurant.frontmatter.rating}
+                type={restaurant.frontmatter.type}
+                address={restaurant.frontmatter.address}
+              />
             ))
           }
         </ul>
@@ -66,7 +74,17 @@ const brewery = restaurants
       </header>
       <div class="container">
         <ul class="cards">
-          {pho.map((restaurant) => <Card title={restaurant.title} rating={restaurant.rating} type={restaurant.type} address={restaurant.address} />)}
+          {
+            pho.map((restaurant) => (
+              <ListCard
+                link={restaurant.url}
+                title={restaurant.frontmatter.title}
+                rating={restaurant.frontmatter.rating}
+                type={restaurant.frontmatter.type}
+                address={restaurant.frontmatter.address}
+              />
+            ))
+          }
         </ul>
         <figure>
           <Image
@@ -96,7 +114,13 @@ const brewery = restaurants
         <ul class="cards">
           {
             brewery.map((restaurant) => (
-              <Card title={restaurant.title} rating={restaurant.rating} type={restaurant.type} address={restaurant.address} />
+              <ListCard
+                link={restaurant.url}
+                title={restaurant.frontmatter.title}
+                rating={restaurant.frontmatter.rating}
+                type={restaurant.frontmatter.type}
+                address={restaurant.frontmatter.address}
+              />
             ))
           }
         </ul>
@@ -115,7 +139,9 @@ const brewery = restaurants
         <header>
           <h2>Check out all our favorites</h2>
         </header>
-        <a href="/restaurants/favorites" class="button"> View all restaurants</a>
+        <a href="/restaurants/favorites" class="button">
+          View all restaurants</a
+        >
       </div>
     </section>
   </main>
