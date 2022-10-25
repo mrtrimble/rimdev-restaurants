@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Nagoya Japanese Restaurant
 lng: -76.9035736
 lat: 40.2427375

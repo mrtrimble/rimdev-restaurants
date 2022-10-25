@@ -1,4 +1,4 @@
-@import '../mixins/';
+@import "../mixins/";
 
 :root {
   --type-color: var(--primary-color);
@@ -16,6 +16,7 @@
 
 .card {
   @include stack;
+  position: relative;
   --stack: 1rem;
   &-head {
     background: var(--type-color);
@@ -57,6 +58,23 @@
 
   h3 {
     color: var(--type-color);
+    line-height: 1.2;
+  }
+
+  a {
+    color: var(--type-color);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
   }
 
   &.breakfast {

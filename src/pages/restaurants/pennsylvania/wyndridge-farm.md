@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Wyndridge Farm
 lng: -76.6505934
 lat: 39.884197

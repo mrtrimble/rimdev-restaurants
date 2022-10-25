@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Philadelphia Steak & Hoagies
 lng: -76.9602987
 lat: 40.2374764

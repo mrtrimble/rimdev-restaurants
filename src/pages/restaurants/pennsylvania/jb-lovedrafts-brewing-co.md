@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: JB Lovedrafts
 lng: -76.9821727
 lat: 40.2381881

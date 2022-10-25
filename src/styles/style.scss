@@ -1,18 +1,18 @@
-@use 'sass:meta';
-@import './mixins/';
+@use "sass:meta";
+@import "./mixins/";
 
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap");
 
 @layer reset, typography, components, theme;
 
-@import '@acab/reset.css' layer(reset);
+@import "@acab/reset.css" layer(reset);
 
 @layer components {
-  @include meta.load-css('components');
+  @include meta.load-css("components");
 }
 
 @layer typography {
-  @include meta.load-css('typography');
+  @include meta.load-css("typography");
 }
 
 @layer theme {
@@ -37,6 +37,13 @@
     > * + * {
       margin-block-start: 5rem;
     }
+  }
+
+  main > article {
+    > * + * {
+      margin-block-start: 5rem;
+    }
+    margin-block-end: 1rem;
   }
 
   .featured .container {
@@ -95,12 +102,33 @@
   }
 
   #favorite-restaurants {
-    section{
+    section {
       @include stack;
     }
     img {
       width: 100%;
       height: auto;
+    }
+  }
+}
+
+#restaurant-page {
+  .content {
+    @include stack;
+    div.container {
+      display: flex;
+      flex-flow: column;
+      gap: 1rem;
+      .card{
+        width: 100%;
+      }
+      @media (min-width: 768px){
+          display:grid;
+          gap: 1rem;
+          grid-template-columns:
+        25ch 1fr;
+
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: The Cove
 lng: -76.7145815
 lat: 39.9358609

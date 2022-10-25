@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: 1700 Degree Steakhouse
 lng: -76.8818805
 lat: 40.2601682

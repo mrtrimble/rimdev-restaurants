@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Hallamshire Family Restaurant
 lng: -76.6159459
 lat: 40.0017827

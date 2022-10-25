@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: DuBu Restaurant
 lng: -75.1376877
 lat: 40.0630569

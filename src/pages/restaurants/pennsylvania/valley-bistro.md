@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Valley Bistro
 lng: -76.9772657
 lat: 40.2891836

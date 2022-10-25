@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Stony Run Brew House
 lng: -76.6518121
 lat: 39.9830258

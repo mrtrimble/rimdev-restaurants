@@ -43,16 +43,16 @@ onMounted(() => {
       .setHTML(`
         <div style="padding: 0.5rem">
           <div>
-            <strong style="color: ${marker.color};">${marker.title}</strong> 
+            <strong style="color: ${marker.frontmatter.color};">${marker.frontmatter.title}</strong> 
           </div>
-          ${marker.address ? `<address style="margin-top: 0.25rem; width: 20ch;">${marker.address}</address>` : ''}
+          ${marker.frontmatter.address ? `<address style="margin-top: 0.25rem; width: 20ch;">${marker.frontmatter.address}</address>` : ''}
         </div>
       `)
 
     new mapboxgl.Marker({
-      color: marker.color
+      color: marker.frontmatter.color
     })
-      .setLngLat([marker.lng, marker.lat])
+      .setLngLat([marker.frontmatter.lng, marker.frontmatter.lat])
       .setPopup(popup)
       .addTo(map)
   })

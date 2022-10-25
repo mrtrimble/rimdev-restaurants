@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Hickory Ridge
 lng: -77.1277894
 lat: 40.2335919

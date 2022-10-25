@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Tröegs Independent Brewing
 lng: -76.6431142
 lat: 40.2971086

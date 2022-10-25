@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Pho La Vie
 lng: -76.787
 lat: 40.321

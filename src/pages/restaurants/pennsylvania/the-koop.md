@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: The Koop
 lng: -76.9433408
 lat: 40.2389185

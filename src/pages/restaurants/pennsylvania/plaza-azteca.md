@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Plaza Azteca
 lng: -76.983806
 lat: 40.2396087

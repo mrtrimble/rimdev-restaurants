@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Roma's Pizza & Restaurant
 lng: -76.6442043
 lat: 39.9007179

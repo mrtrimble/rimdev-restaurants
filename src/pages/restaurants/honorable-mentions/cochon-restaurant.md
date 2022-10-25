@@ -1,4 +1,5 @@
 ---
+layout: '../../../layouts/Restaurant.astro'
 title: Cochon Restaurant
 lng: -90.0672842
 lat: 29.9422816
