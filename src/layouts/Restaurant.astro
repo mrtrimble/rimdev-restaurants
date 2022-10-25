@@ -30,8 +30,8 @@ const { frontmatter } = Astro.props;
     <meta name="theme-color" content="#7254a2" />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href="https://rimdev-likes-food.netlify.app/" />
-    <title>{frontmatter.title} | RIMdev Likes Food</title>
-    <meta property="og:title" content="RIMdev Likes Food!" />
+    <title>{frontmatter.title} | RIMdev Likes Food!</title>
+    <meta property="og:title" content={frontmatter.title + ' | RIMdev Likes Food!'} />
     <meta property="og:site_name" content="RIMdev Likes Food!" />
     <meta property="og:url" content="https://rimdev-likes-food.netlify.app/" />
     <meta
