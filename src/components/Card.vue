@@ -4,10 +4,6 @@ import Icon from '../components/Icon.vue';
 import { computed } from 'vue';
 
 const props = defineProps({
-  // title: String,
-  // address: String,
-  // rating: Number,
-  // tags: Array,
   type: String
 })
 
