@@ -31,7 +31,10 @@ const { frontmatter } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href="https://rimdev-likes-food.netlify.app/" />
     <title>{frontmatter.title} | RIMdev Likes Food!</title>
-    <meta property="og:title" content={frontmatter.title + ' | RIMdev Likes Food!'} />
+    <meta
+      property="og:title"
+      content={frontmatter.title + ' | RIMdev Likes Food!'}
+    />
     <meta property="og:site_name" content="RIMdev Likes Food!" />
     <meta property="og:url" content="https://rimdev-likes-food.netlify.app/" />
     <meta
@@ -49,7 +52,7 @@ const { frontmatter } = Astro.props;
     <Header header={frontmatter.title} width="--container-width: 80ch;" />
     <main id="restaurant-page">
       <article>
-        <section class="content">
+        <section class="details">
           <header class="container" style="--container-width: 80ch;">
             <h2>The Details</h2>
           </header>
@@ -58,6 +61,14 @@ const { frontmatter } = Astro.props;
               <h3>{frontmatter.title}</h3>
 
               <dl>
+                {
+                  Astro.props.content ? (
+                  <dt>Description</dt>  
+                  <dd class="description">
+                    <slot />
+                  </dd>
+                  ) : null
+                }
                 {
                   frontmatter.rating ? (
                     <div class="list-group">
@@ -81,6 +92,17 @@ const { frontmatter } = Astro.props;
                 }
 
                 {
+                  frontmatter.website ? (
+                    <div class="list-group">
+                      <dt>Website</dt>
+                      <dd>
+                        <a href={frontmatter.website}>{frontmatter.website}</a>
+                      </dd>
+                    </div>
+                  ) : null
+                }
+
+                {
                   frontmatter.tags ? (
                     <div class="list-group">
                       <dt>Tags</dt>
@@ -88,6 +110,21 @@ const { frontmatter } = Astro.props;
                         {frontmatter.tags.map((tag) => (
                           <span class="tag">{tag}</span>
                         ))}
+                      </dd>
+                    </div>
+                  ) : null
+                }
+
+                {
+                  frontmatter.recommendations ? (
+                    <div class="list-group">
+                      <dt>Recommendations</dt>
+                      <dd>
+                        <ul class="recommendations">
+                          {frontmatter.recommendations.map((recommendation) => (
+                            <li class="recommendation">{recommendation}</li>
+                          ))}
+                        </ul>
                       </dd>
                     </div>
                   ) : null
@@ -100,7 +137,6 @@ const { frontmatter } = Astro.props;
               client:visible
             />
           </div>
-          <slot />
         </section>
       </article>
       <section class="link-section">

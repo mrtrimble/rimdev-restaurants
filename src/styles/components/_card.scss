@@ -67,6 +67,9 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  a.link-card {
     &::before {
       content: "";
       position: absolute;

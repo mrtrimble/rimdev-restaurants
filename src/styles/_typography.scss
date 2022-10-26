@@ -1,4 +1,4 @@
-@import '../styles/mixins/';
+@import "../styles/mixins/";
 
 :root {
   --step--2: clamp(0.91rem, calc(0.89rem + 0.1vw), 0.96rem);
@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: 'Figtree', sans-serif;
+  font-family: "Figtree", sans-serif;
   font-size: var(--step-0);
   color: #333;
 }
@@ -50,12 +50,13 @@ address {
 
 dl {
   @include stack;
-  dt{
+  font-size: var(--step--1);
+  dt {
     text-transform: uppercase;
     font-size: var(--step--2);
     font-weight: 700;
   }
-  dd{
-    margin-block-start: 0.5rem;
+  dd {
+    margin-block-start: 0.25rem;
   }
 }

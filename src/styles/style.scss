@@ -113,22 +113,26 @@
 }
 
 #restaurant-page {
-  .content {
+  .details {
     @include stack;
     div.container {
       display: flex;
       flex-flow: column;
       gap: 1rem;
-      .card{
+      .card {
         width: 100%;
       }
-      @media (min-width: 768px){
-          display:grid;
-          gap: 1rem;
-          grid-template-columns:
-        25ch 1fr;
-
+      @media (min-width: 768px) {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 25ch 1fr;
       }
     }
+  }
+
+  .recommendations {
+    font-size: var(--step--1);
+    list-style-type: disc;
+    padding-inline-start: 1rem;
   }
 }

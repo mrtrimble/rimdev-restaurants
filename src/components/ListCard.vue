@@ -26,7 +26,8 @@ const typeClass = computed(() => {
         <Icon :type="props.type" />
       </span>
     </div>
-    <h3><a :href="props.link">{{props.title}}</a></h3>
+    <h3><a class="link-card"
+         :href="props.link">{{props.title}}</a></h3>
     <StarRating v-if="props.rating"
                 :rating="props.rating" />
     <address v-if="props.address">{{props.address}}</address>
