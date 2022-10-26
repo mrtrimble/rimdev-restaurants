@@ -138,7 +138,7 @@ const { frontmatter } = Astro.props;
               client:visible
             />
 
-            <Directions lat={frontmatter.lat} lng={frontmatter.lng} mapboxToken={mapboxToken} client:idle />
+            <Directions lat={frontmatter.lat} lng={frontmatter.lng} mapboxToken={mapboxToken} client:load />
           </div>
         </section>
       </article>
