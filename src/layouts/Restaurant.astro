@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import SingleMap from '../components/SingleMap.vue';
 import Card from '../components/Card.vue';
 import StarRating from '../components/StarRating.vue';
+import Directions from '../components/Directions.vue';
 import Footer from '../components/Footer.astro';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -136,6 +137,8 @@ const { frontmatter } = Astro.props;
               mapboxToken={mapboxToken}
               client:visible
             />
+
+            <Directions lat={frontmatter.lat} lng={frontmatter.lng} mapboxToken={mapboxToken} client:idle />
           </div>
         </section>
       </article>
